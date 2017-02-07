@@ -26,4 +26,10 @@ public class BookService {
 		}
 		return "No book found with given id";
 	}
+
+	public void listGenresInMap() {
+		for (Book eachBook : bookMap.values()) {
+			System.out.println("This is the value of genre " + eachBook.getGenre());
+		}
+	}
 }
