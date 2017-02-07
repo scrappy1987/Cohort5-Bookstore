@@ -1,49 +1,19 @@
-package com.qa.bookstore.student18;
+package bookstore;
 
 public class Book {
-
-	private String author;
-	private String title;
-	private String genre;
-	private String yearPublished;
-
-	public Book(String author, String title, String genre, String yearPublished) {
+	
+	private String author, title, publisher, publishDate;
+	
+	public Book(String author, String title, String publisher, String publishDate) {
 		this.author = author;
 		this.title = title;
-		this.genre = genre;
-		this.yearPublished = yearPublished;
+		this.publisher = publisher;
+		this.publishDate = publishDate;
 	}
 
-	public String getAuthor() {
-		return author;
+	@Override
+	public String toString(){
+		return "Author: " + author + "\tTitle: " + title + "\t"
+				+ "Publisher: " + publisher + "\tPublish Date: " + publishDate;
 	}
-
-	public void setAuthor(String author) {
-		this.author = author;
-	}
-
-	public String getGenre() {
-		return genre;
-	}
-
-	public void setGenre(String genre) {
-		this.genre = genre;
-	}
-
-	public String getYearPublished() {
-		return yearPublished;
-	}
-
-	public void setYearPublished(String yearPublished) {
-		this.yearPublished = yearPublished;
-	}
-
-	public String getTitle() {
-		return title;
-	}
-
-	public void setTitle(String title) {
-		this.title = title;
-	}
-
 }
