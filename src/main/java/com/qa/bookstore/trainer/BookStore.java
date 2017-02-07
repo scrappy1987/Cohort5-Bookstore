@@ -10,9 +10,11 @@ public class BookStore {
 		BookService bookService = new BookService();
 		System.out.println("Step 3 - add the book to the map");
 		bookService.addBook(it);
-		System.out.println("Step 4 - remove the entry from the map");
+		String jsonSrring = bookService.convertMapToJson();
+		System.out.println("Step 4 this is the map to json " + jsonSrring);
+		System.out.println("Step 5 - remove the entry from the map");
 		String bookMessage = bookService.removeBook(2);
-		System.out.println("Step 5 - the book removed message = " + bookMessage);
+		System.out.println("Step 6 - the book removed message = " + bookMessage);
 	}
 
 	private static Book createBook(String author, String title, String genre, String yearPublished) {

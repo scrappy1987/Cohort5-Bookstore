@@ -3,6 +3,8 @@ package com.qa.bookstore.trainer;
 import java.util.HashMap;
 import java.util.Map;
 
+import com.google.gson.Gson;
+
 public class BookService {
 
 	private static final int INITIAL_COUNT = 1;
@@ -31,5 +33,10 @@ public class BookService {
 		for (Book eachBook : bookMap.values()) {
 			System.out.println("This is the value of genre " + eachBook.getGenre());
 		}
+	}
+
+	public String convertMapToJson() {
+		Gson gson = new Gson();
+		return gson.toJson(bookMap);
 	}
 }
