@@ -10,11 +10,18 @@ public class BookStore {
 		BookService bookService = new BookService();
 		System.out.println("Step 3 - add the book to the map");
 		bookService.addBook(it);
-		String jsonSrring = bookService.convertMapToJson();
-		System.out.println("Step 4 this is the map to json " + jsonSrring);
+		String jsonBookString = convertBooksToJson(bookService);
+		System.out.println("Step 4 - This is the map converted to JSON " + jsonBookString);
 		System.out.println("Step 5 - remove the entry from the map");
+		long genreCount = bookService.findAmountOfGivenGenreInBookStore("Horror");
+		System.out.println("Step 6 - the amount of the given genre is: " + genreCount);
 		String bookMessage = bookService.removeBook(2);
-		System.out.println("Step 6 - the book removed message = " + bookMessage);
+		System.out.println("Step 7 - the book removed message = " + bookMessage);
+	}
+
+	private static String convertBooksToJson(BookService bookService) {
+		BookMapToJSONConverter converter = new BookMapToJSONConverter();
+		return converter.convertMapToJson(bookService.getBookMap());
 	}
 
 	private static Book createBook(String author, String title, String genre, String yearPublished) {
