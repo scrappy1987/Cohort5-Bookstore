@@ -13,8 +13,8 @@ public class BookStore {
 		String jsonBookString = convertBooksToJson(bookService);
 		System.out.println("Step 4 - This is the map converted to JSON " + jsonBookString);
 		System.out.println("Step 5 - remove the entry from the map");
-		long genreCount = bookService.findAmountOfGivenGenreInBookStore("Horror");
-		System.out.println("Step 6 - the amount of the given genre is: " + genreCount);
+//		long genreCount = bookService.findAmountOfGivenGenreInBookStore("Horror");
+//		System.out.println("Step 6 - the amount of the given genre is: " + genreCount);
 		String bookMessage = bookService.removeBook(2);
 		System.out.println("Step 7 - the book removed message = " + bookMessage);
 	}
