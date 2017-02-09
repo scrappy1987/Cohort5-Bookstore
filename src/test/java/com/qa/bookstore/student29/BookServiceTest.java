@@ -8,7 +8,7 @@ import org.junit.Test;
 public class BookServiceTest {
 
 	@Test
-	public void testHowManyBooksStephanKingHasInStore() {
+	public void testHowManyBooksInStore() {
 		BookService service = new BookService();
 		Book IT = new Book("Stephan King", "IT", "Horror", "1988");
 		service.addBook(IT);
