@@ -35,4 +35,8 @@ public class BookService {
 		bookMap.put(positionInMap, newBook);
 	}
 
+	public long howManyBooksByAuthor(String author) {
+		return bookMap.values().stream().filter(eachBook -> eachBook.getAuthor().equals(author)).count();
+	}
+
 }
