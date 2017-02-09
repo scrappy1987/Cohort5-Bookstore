@@ -35,7 +35,4 @@ public class BookService {
 		bookMap.put(positionInMap, newBook);
 	}
 
-	public long findAmountOfGivenGenreInBookStore(String genre) {
-		return bookMap.values().stream().filter(book -> book.getGenre().equals(genre)).count();
-	}
 }
