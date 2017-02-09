@@ -1,17 +1,30 @@
 package com.qa.bookstore.student9;
 
 public class Book {
+	
+	
+	
+	private String title;
+
 
 	private String author;
-	private String title;
+	private String isbn;
 	private String genre;
-	private String yearPublished;
 
-	public Book(String author, String title, String genre, String yearPublished) {
-		this.author = author;
+	public Book(String title, String author,  String isbn, String genre){
 		this.title = title;
+		this.author = author;
+		this.isbn = isbn;
 		this.genre = genre;
-		this.yearPublished = yearPublished;
+		
+	}
+	
+	public String getTitle() {
+		return title;
+	}
+
+	public void setTitle(String title) {
+		this.title = title;
 	}
 
 	public String getAuthor() {
@@ -22,6 +35,14 @@ public class Book {
 		this.author = author;
 	}
 
+	public String getIsbn() {
+		return isbn;
+	}
+
+	public void setIsbn(String isbn) {
+		this.isbn = isbn;
+	}
+
 	public String getGenre() {
 		return genre;
 	}
@@ -29,21 +50,4 @@ public class Book {
 	public void setGenre(String genre) {
 		this.genre = genre;
 	}
-
-	public String getYearPublished() {
-		return yearPublished;
-	}
-
-	public void setYearPublished(String yearPublished) {
-		this.yearPublished = yearPublished;
-	}
-
-	public String getTitle() {
-		return title;
-	}
-
-	public void setTitle(String title) {
-		this.title = title;
-	}
-
 }
