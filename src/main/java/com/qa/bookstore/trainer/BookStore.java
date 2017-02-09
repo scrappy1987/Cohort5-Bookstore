@@ -13,7 +13,6 @@ public class BookStore {
 		String jsonBookString = convertBooksToJson(bookService);
 		System.out.println("Step 4 - This is the map converted to JSON " + jsonBookString);
 		System.out.println("Step 5 - remove the entry from the map");
-
 		String bookMessage = bookService.removeBook(2);
 		System.out.println("Step 7 - the book removed message = " + bookMessage);
 	}
