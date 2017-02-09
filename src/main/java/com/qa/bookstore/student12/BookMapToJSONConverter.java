@@ -1,4 +1,4 @@
-package com.qa.bookstore.trainer;
+package com.qa.bookstore.student12;
 
 import java.util.Map;
 
