@@ -45,48 +45,59 @@ public class Service {
 		Book book = new Book(title, author, isbn, genre);
 		return book;
 	}
-	
-	public String bookToJson(Book book){
+
+	public String bookToJson(Book book) {
 		Gson gson = new GsonBuilder().setPrettyPrinting().create();
 		JsonParser jp = new JsonParser();
 		JsonElement je = jp.parse(gson.toJson(book));
 		String bookJsonString = gson.toJson(je);
 		return bookJsonString;
 	}
-	
-	public String mapToJson(Map<String,Book> map){
+
+	public String mapToJson(Map<String, Book> map) {
 		Gson gson = new GsonBuilder().setPrettyPrinting().create();
 		JsonParser jp = new JsonParser();
 		JsonElement je = jp.parse(gson.toJson(map));
 		String mapJsonString = gson.toJson(je);
 		return mapJsonString;
 	}
-	
-	
 
- 	public void updateBook(String keyToUpdate, int option, String newValue,  Map<String, Book> bookMap) {
-		Book b =  bookMap.get(keyToUpdate);
+	public void updateBook(String keyToUpdate, int option, String newValue, Map<String, Book> bookMap) {
+		Book b = bookMap.get(keyToUpdate);
 
 		switch (option) {
-			case 1: {
-				b.setTitle(newValue);
-				break;
-			}
-			case 2: {
-				b.setAuthor(newValue);
-				break;
-			}
-			case 3:{
-				b.setIsbn(newValue);
-				break;
-			}
-			case 4:{
-				b.setGenre(newValue);
-				break;
+		case 1: {
+			b.setTitle(newValue);
+			break;
+		}
+		case 2: {
+			b.setAuthor(newValue);
+			break;
+		}
+		case 3: {
+			b.setIsbn(newValue);
+			break;
+		}
+		case 4: {
+			b.setGenre(newValue);
+			break;
+		}
+		}
+
+	}
+
+	public int howManyBooksByAuthor(String author) {
+		int count = 0;
+		for (Book book : bookMap.values()) {
+			if (book.getAuthor().equalsIgnoreCase(author)) {
+				count++;
 			}
 		}
-		
-		
+		return count;
+	}
+	
+	public long howManyBooksByAuthorStream(String author) {
+		return bookMap.values().stream().filter(eachBook -> eachBook.getAuthor().equals(author)).count();
 	}
 
 }
