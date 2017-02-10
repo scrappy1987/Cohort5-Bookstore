@@ -3,6 +3,7 @@ package com.qa.bookstore.student2;
 import java.util.HashMap;
 import java.util.Map;
 
+
 public class BookService {
 
 	private static final int INITIAL_COUNT = 1;
@@ -17,6 +18,14 @@ public class BookService {
 	public void addBook(Book book) {
 		bookMap.put(id, book);
 		id++;
+	}
+	
+	public StringBuffer getAllBooks(){
+		StringBuffer allBooksString = new StringBuffer();
+		for (Book b: bookMap.values()){
+			allBooksString.append("/n").append(b);
+		}
+		return allBooksString;
 	}
 
 	public String removeBook(int bookNumber) {
