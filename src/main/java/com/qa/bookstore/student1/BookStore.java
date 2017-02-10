@@ -1,9 +1,12 @@
 package com.qa.bookstore.student1;
 
+import javax.ws.rs.ApplicationPath;
+import javax.ws.rs.core.Application;
+
+@ApplicationPath("")
 public class BookStore {
 
-	public static void main(String[] args) {
-		System.out.println("About to create the bookstore application");
+		/*System.out.println("About to create the bookstore application");
 		System.out.println("Step 1 - creating book");
 		Book it = createBook("Stephen King", "It", "Horror", "1985");
 		System.out.println("Step 2 - creating the book service");
@@ -14,8 +17,7 @@ public class BookStore {
 		System.out.println("Step 4 - This is the map converted to JSON " + jsonBookString);
 		System.out.println("Step 5 - remove the entry from the map");
 		String bookMessage = bookService.removeBook(2);
-		System.out.println("Step 7 - the book removed message = " + bookMessage);
-	}
+		System.out.println("Step 7 - the book removed message = " + bookMessage);*/
 
 	private static String convertBooksToJson(BookService bookService) {
 		BookMapToJSONConverter converter = new BookMapToJSONConverter();

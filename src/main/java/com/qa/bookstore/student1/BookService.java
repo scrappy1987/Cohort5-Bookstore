@@ -3,8 +3,19 @@ package com.qa.bookstore.student1;
 import java.util.HashMap;
 import java.util.Map;
 
-public class BookService {
+import javax.ws.rs.Consumes;
+import javax.ws.rs.Path;
+import javax.ws.rs.Produces;
+import javax.ws.rs.core.MediaType;
 
+@Path("/books")
+@Produces(
+		{MediaType.APPLICATION_JSON})
+@Consumes(
+		{MediaType.APPLICATION_JSON})
+
+public class BookService {
+	
 	private static final int INITIAL_COUNT = 1;
 	private Map<Integer, Book> bookMap;
 	private int id;
@@ -37,6 +48,14 @@ public class BookService {
 
 	public long howManyBooksByAuthor(String author) {
 		return bookMap.values().stream().filter(eachBook -> eachBook.getAuthor().equals(author)).count();
+	}
+	
+	public Map<Integer, Book> getAllBooks(){
+		return bookMap;
+	}
+	
+	public void addNewBook(Book book){
+		
 	}
 
 }
