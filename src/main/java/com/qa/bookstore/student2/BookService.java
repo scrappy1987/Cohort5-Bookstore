@@ -13,6 +13,7 @@ public class BookService {
 	public BookService() {
 		this.bookMap = new HashMap<Integer, Book>();
 		this.id = INITIAL_COUNT;
+		addToMap();
 	}
 
 	public void addBook(Book book) {
@@ -20,12 +21,8 @@ public class BookService {
 		id++;
 	}
 	
-	public StringBuffer getAllBooks(){
-		StringBuffer allBooksString = new StringBuffer();
-		for (Book b: bookMap.values()){
-			allBooksString.append("/n").append(b);
-		}
-		return allBooksString;
+	public Map<Integer, Book> getAllBooks(){
+		return bookMap;
 	}
 
 	public String removeBook(int bookNumber) {
@@ -47,5 +44,15 @@ public class BookService {
 	public long howManyBooksByAuthor(String author) {
 		return bookMap.values().stream().filter(eachBook -> eachBook.getAuthor().equals(author)).count();
 		}
+	
+	private void addToMap()
+	{
+		Book aBook = new Book("a", "v", "v", "a");
+		Book bBook = new Book("a", "v", "v", "a");
+		bookMap.put(1, aBook);
+		bookMap.put(2, bBook);
+				
+				
+	}
 
 }

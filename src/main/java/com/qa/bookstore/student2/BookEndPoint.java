@@ -11,6 +11,8 @@ import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 
+import com.google.gson.Gson;
+
 @Path("/bookstore")
 public class BookEndPoint {
 
@@ -20,8 +22,8 @@ public class BookEndPoint {
 	@GET
 	@Path("/json")
 	@Produces({ "application/json" })
-	public StringBuffer getBooksAsJson() {
-		return bookService.getAllBooks();
+	public String getBooksAsJson() {
+		return new Gson().toJson(bookService.getAllBooks());
 	}
 
 	@POST
