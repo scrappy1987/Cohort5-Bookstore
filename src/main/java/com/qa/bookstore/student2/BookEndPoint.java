@@ -26,25 +26,25 @@ public class BookEndPoint {
 		return new Gson().toJson(bookService.getAllBooks());
 	}
 
-	@POST
-	@Path("/json")
-	@Produces({ "application/json" })
-	public String addNewBookToMap(String bookJson) {
-		return bookService.addNewBook(bookJson);
-	}
-
-	@PUT
-	@Path("/json/{id}")
-	@Produces({ "application/json" })
-	public String replaceBookFromBookStore(@PathParam("id") Integer id, String bookJson) {
-		return bookService.replaceBook(id, bookJson);
-	}
-
-	@DELETE
-	@Path("/json/{id}")
-	@Produces({ "application/json" })
-	public String deleteBookFromBookStore(@PathParam("id") Integer id) {
-		return bookService.deleteBook(id);
-	}
+//	@POST
+//	@Path("/json")
+//	@Produces({ "application/json" })
+//	public String addNewBookToMap(String bookJson) {
+//		return bookService.addNewBook(bookJson);
+//	}
+//
+//	@PUT
+//	@Path("/json/{id}")
+//	@Produces({ "application/json" })
+//	public String replaceBookFromBookStore(@PathParam("id") Integer id, String bookJson) {
+//		return bookService.replaceBook(id, bookJson);
+//	}
+//
+//	@DELETE
+//	@Path("/json/{id}")
+//	@Produces({ "application/json" })
+//	public String deleteBookFromBookStore(@PathParam("id") Integer id) {
+//		return bookService.deleteBook(id);
+//	}
 
 }
