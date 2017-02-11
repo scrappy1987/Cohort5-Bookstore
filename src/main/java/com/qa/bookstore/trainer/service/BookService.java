@@ -1,4 +1,4 @@
-package com.qa.student.bookstore.trainer.service;
+package com.qa.bookstore.trainer.service;
 
 import java.util.HashMap;
 import java.util.Map;
